@@ -11,6 +11,7 @@
  * @return {ListNode}
  */
 
+ import {reverseKGroup} from './leet_25.js'
 export function ListNode(val, next) {
     this.val = (val === undefined ? 0 : val)
     this.next = (next === undefined ? null : next)
@@ -45,5 +46,34 @@ export function assertEquals(expected, actual) {
   
   
     return expected==null && actual==null
+  }
+
+  export function test(arr1, arr2, k) {
+    console.log("Input " + arr1 + ", k = " + k);
+    console.log("expected result :" + arr2);
+    let pInput = document.createElement('p');
+    pInput.innerHTML = `Input: head = ${arr1}, k = ${k}`
+    let pOutput = document.createElement('p');
+    pOutput.innerHTML = `Input: head = ${arr2}`
+  
+    let head = arrayToLinkedList(arr1);
+    let actual = reverseKGroup(head, k);
+  
+    let expected = arrayToLinkedList(arr2);
+  
+    let testPass = assertEquals(expected, actual);
+  
+    console.log(testPass);
+  
+    let pResult = document.createElement('p');
+    let resultText = testPass ? "Pass" : "Fail";
+    let resultColor = testPass ? "green" : "red";
+    pResult.innerHTML = `Input: head = ${resultText}`
+    pResult.style.color = resultColor
+  
+    document.body.appendChild(pInput);
+    document.body.appendChild(pOutput);
+    document.body.appendChild(pResult);
+  
   }
   

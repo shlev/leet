@@ -9,9 +9,9 @@ Could you solve the problem in O(1) extra memory space?
 You may not alter the values in the list's nodes, only nodes itself may be changed.
 */
 
-import { ListNode, assertEquals, arrayToLinkedList } from './list_node.js';
+import { ListNode, test } from './list_node.js';
 
-var reverseKGroup = function (head, k) {
+export function reverseKGroup (head, k) {
     if ( k<2 ) return head;
 
     let r;
@@ -19,8 +19,6 @@ var reverseKGroup = function (head, k) {
 
     let chunkCounter;
     original = head;
-    let chunkTail;
-    
 
     while ( original != null ) {
       chunkCounter = k;
@@ -67,17 +65,7 @@ export function test14() {
 
 }
 
-function test(arr1, arr2, k) {
-  console.log("Input " + arr1 + ", k = " + k);
-  console.log("expected result :" + arr2);
-  let head = arrayToLinkedList(arr1);
-  let actual = reverseKGroup(head, k);
 
-  let expected = arrayToLinkedList(arr2);
-
-  console.log(assertEquals(expected, actual));
-
-}
 
 function testA() {
   console.log("Test 1");
