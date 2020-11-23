@@ -12,6 +12,7 @@
  */
 
  import {reverseKGroup} from './leet_25.js'
+ import {printTestResult} from './test.js'
 export function ListNode(val, next) {
     this.val = (val === undefined ? 0 : val)
     this.next = (next === undefined ? null : next)
@@ -63,17 +64,6 @@ export function assertEquals(expected, actual) {
   
     let testPass = assertEquals(expected, actual);
   
-    console.log(testPass);
-  
-    let pResult = document.createElement('p');
-    let resultText = testPass ? "Pass" : "Fail";
-    let resultColor = testPass ? "green" : "red";
-    pResult.innerHTML = `Input: head = ${resultText}`
-    pResult.style.color = resultColor
-  
-    document.body.appendChild(pInput);
-    document.body.appendChild(pOutput);
-    document.body.appendChild(pResult);
-  
+    printTestResult( testPass, pInput, pOutput);
   }
   

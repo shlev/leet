@@ -1,4 +1,4 @@
-import {romanToInt} from "./romanToInt.js";
-import { test14} from "./leet_14.js";
+import { test_26} from "./leet_26.js";
 
-test14();
+test_26();
+
